@@ -1,5 +1,8 @@
-contaminants data
+/contaminants data/
+
 metadata.csv
 cache_geo.csv
 cities_catalunya.csv
 cities_catalunya_modified.csv
+
+/generated_data/
