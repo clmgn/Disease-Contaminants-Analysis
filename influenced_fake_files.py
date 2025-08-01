@@ -28,12 +28,12 @@ def random_date(start_year=2020, end_year=2023):
     return f"{year}-{month:02d}-{day:02d}"
 
 cities_list = []
-with open('cities_catalunya_modified.csv', 'r', encoding='utf-8') as f:
-    reader = csv.reader(f)
-    next(reader)
+with open('data-csv/Codis_postals.csv', 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
     for row in reader:
-        if len(row) >= 2:
-            cities_list.append((row[0], row[1]))
+        name = row["Nom municipi"].zfill(6)  # S'assurer que l'INE a 6 chiffres
+        postal_code = row["Codi postal"]
+        cities_list.append((name, postal_code))
 
 vis_cods = [random.randint(1_000_000, 9_999_999) for _ in range(50)]
 
@@ -49,7 +49,7 @@ cods_pondes += [
 
 # Exemple : chaque ville a 1 ou 2 codes fréquents principaux
 city_cod_map = {}
-for postal_code, city in cities_list:
+for city, postal_code in cities_list:
     city_cod_map[city] = random.sample(cods_frequents, k=random.randint(1, 2))
 
 filename = f'metadata.csv'
@@ -58,7 +58,7 @@ with open(filename, 'w', newline='', encoding='utf-8') as f:
     writer.writerow(camps)  # écrit l'en-tête
     for i in range(1000):
         idps = i
-        postal_code, city = random.choice(cities_list)
+        city, postal_code = random.choice(cities_list)
         # 70% de chances de prendre un code fréquent de la ville, sinon un code aléatoire
         if random.random() < 0.7:
             cod = random.choice(city_cod_map[city])
@@ -89,4 +89,3 @@ with open(filename, 'w', newline='', encoding='utf-8') as f:
             sexe, situacio, age_sit, CODIABS, ambit, city, postal_code
         ]
         writer.writerow(row)
-
