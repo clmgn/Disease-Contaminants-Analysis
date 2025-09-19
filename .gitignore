@@ -6,3 +6,7 @@ cities_catalunya.csv
 cities_catalunya_modified.csv
 
 /generated_data/
+/heatmap_cache/
+/heatmaps/
+/maps_cluster/
+/dist/
