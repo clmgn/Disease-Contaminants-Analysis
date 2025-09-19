@@ -5,16 +5,14 @@ This project was developed as part of an engineering internship, where the goal 
 The final results of this project are displayed on an interactive map from OpenStreetMap (OSM). On this map are added the Catalunyans 'comarques' using the file 'map_comarques.html'. Then, the source codes can calculate and show on the map the contaminants and patients location on the map, considering the contaminants' concentration (downloaded online from the script), the disease of interest and the patients data. All the project is based upon a metadata file containing patients' information. It can only work if this file has the requested format, with the right amount and names of columns.
 
 ## Repository Structure
-
-Disease-Contaminants-Analysis/
+<pre/> Disease-Contaminants-Analysis/
 ├── data-csv/ → useful data so that the code can run properly (CSV format)
 ├── src/ → source code (data processing & visualization)
 ├── comarques-compressed.geojson → geographic boundaries (GeoJSON), also necessary to have
 ├── influenced_fake_files.py → script that can be used to make a fake metadata.csv file with the right format
 ├── map_comarques.html → necessary file to add the comarques boundaries on the map
 ├── .gitignore
-└── README.md
-
+└── README.md </pre>
 
 ## Interface explanation
 
