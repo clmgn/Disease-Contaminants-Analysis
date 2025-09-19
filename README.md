@@ -25,3 +25,10 @@ The app can be tested by launching the 'front.py' file from the 'src/' directory
 5. Select a contaminant. They are listed so that the first one on the list has the highest probability of being found at the places as the selected disease.
 6. Choose the kind of map you want to display.
 7. Validate and display the map.
+
+## Map Example
+
+<img width="1413" height="779" alt="last map" src="https://github.com/user-attachments/assets/5d93c4f6-b41f-40c8-82eb-93edf4abb388" />
+
+The blue clusters are calculated with the distance between the center of the circle and the furthest patient location, while the red circles are calculated with the proportion of patients per comarca.
+The heatmap represents the mean concentration of the selected pollutant.
